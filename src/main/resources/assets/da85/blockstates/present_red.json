@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "da85:block/present_red"
+    },
+    "facing=south": {
+      "model": "da85:block/present_red",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "da85:block/present_red",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "da85:block/present_red",
+      "y": 270
+    }
+  }
+}
