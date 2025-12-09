@@ -18,6 +18,11 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> PRESENT_RED;
     public static final DeferredBlock<Block> PRESENT_BLUE;
+    public static final DeferredBlock<Block> PRESENT_GREEN;
+    public static final DeferredBlock<Block> PRESENT_ORANGE;
+    public static final DeferredBlock<Block> PRESENT_PURPLE;
+    public static final DeferredBlock<Block> PRESENT_YELLOW;
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
@@ -32,6 +37,10 @@ public class ModBlocks {
     static{
         PRESENT_RED = registerBlock("present_red", () -> new PresentBlock(BlockBehaviour.Properties.of().noOcclusion()));
         PRESENT_BLUE = registerBlock("present_blue", () -> new PresentBlock(BlockBehaviour.Properties.of().noOcclusion()));
+        PRESENT_GREEN = registerBlock("present_green", () -> new PresentBlock(BlockBehaviour.Properties.of().noOcclusion()));
+        PRESENT_ORANGE = registerBlock("present_orange", () -> new PresentBlock(BlockBehaviour.Properties.of().noOcclusion()));
+        PRESENT_PURPLE = registerBlock("present_purple", () -> new PresentBlock(BlockBehaviour.Properties.of().noOcclusion()));
+        PRESENT_YELLOW = registerBlock("present_yellow", () -> new PresentBlock(BlockBehaviour.Properties.of().noOcclusion()));
     }
 
     public static void register(IEventBus eventBus) {

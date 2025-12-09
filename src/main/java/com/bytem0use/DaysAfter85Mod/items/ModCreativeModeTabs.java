@@ -22,6 +22,10 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.PRESENT_RED);
                         output.accept(ModBlocks.PRESENT_BLUE);
+                        output.accept(ModBlocks.PRESENT_GREEN);
+                        output.accept(ModBlocks.PRESENT_ORANGE);
+                        output.accept(ModBlocks.PRESENT_PURPLE);
+                        output.accept(ModBlocks.PRESENT_YELLOW);
 
                     }).build());
 
