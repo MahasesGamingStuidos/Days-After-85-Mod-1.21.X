@@ -16,9 +16,9 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, DaysAfter85.MOD_ID);
 
-    public static final Supplier<CreativeModeTab> PRESENT_RED_TAB = CREATIVE_MODE_TAB.register("present_red_tab",
+    public static final Supplier<CreativeModeTab> PRESENT_STACK_TAB = CREATIVE_MODE_TAB.register("present_stack_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.PRESENT_RED))
-                    .title(Component.translatable("creativetab.da85.present_red"))
+                    .title(Component.translatable("creativetab.da85.present_stack"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.PRESENT_RED);
                         output.accept(ModBlocks.PRESENT_BLUE);
@@ -26,6 +26,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PRESENT_ORANGE);
                         output.accept(ModBlocks.PRESENT_PURPLE);
                         output.accept(ModBlocks.PRESENT_YELLOW);
+                        output.accept(ModBlocks.PRESENT_STACK);
 
                     }).build());
 
