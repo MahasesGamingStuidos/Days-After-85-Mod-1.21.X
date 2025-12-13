@@ -27,10 +27,21 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PRESENT_PURPLE);
                         output.accept(ModBlocks.PRESENT_YELLOW);
                         output.accept(ModBlocks.PRESENT_STACK);
-                        output.accept(ModBlocks.STAGE_BLOCK);
                         output.accept(ModBlocks.STRING_LIGHTS);
                         output.accept(ModBlocks.SPEAKER);
                         output.accept(ModBlocks.WINDOW);
+                        output.accept(ModBlocks.WALL_PHONE);
+                        output.accept(ModBlocks.GREEN_WALL_PHONE);
+                        output.accept(ModBlocks.BLUE_WALL_PHONE);
+                        output.accept(ModBlocks.STAGE_BLOCK);
+                        output.accept(ModBlocks.STAGE_BLOCK);
+                        output.accept(ModBlocks.RED_STAR_FLOOR);
+                        output.accept(ModBlocks.GREEN_STAR_FLOOR);
+                        output.accept(ModBlocks.BLUE_STAR_FLOOR);
+                        output.accept(ModBlocks.STAR_FLOOR);
+                        output.accept(ModBlocks.RED_STAR_FLOOR);
+                        output.accept(ModBlocks.RED_STAR_CURTAIN);
+                        output.accept(ModBlocks.RED_STRIPED_CURTAIN);
                     }).build());
 
 

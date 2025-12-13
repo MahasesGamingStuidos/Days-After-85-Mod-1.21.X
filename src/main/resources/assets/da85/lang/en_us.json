@@ -11,5 +11,14 @@
   "block.da85.speaker": "Speaker",
   "block.da85.window": "Window (Modular, or so not yet)",
   "block.da85.stage_block": "Stage",
-  "block.da85.string_lights": "String Lights"
+  "block.da85.string_lights": "String Lights",
+  "block.da85.red_striped_curtain": "Red Striped Curtain",
+  "block.da85.red_star_curtain": "Red Star Curtain",
+  "block.da85.star_floor": "Star Floor",
+  "block.da85.red_star_floor": "Star Floor (Red)",
+  "block.da85.green_star_floor": "Star Floor (Green)",
+  "block.da85.blue_star_floor": "Star Floor (Blue)",
+  "block.da85.wall_phone": "Wall Phone",
+  "block.da85.green_wall_phone": "Wall Phone (Green)",
+  "block.da85.blue_wall_phone": "Wall Phone (Blue)"
 }
