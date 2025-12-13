@@ -1,118 +1,19 @@
 {
-  "multipart": [
-    {
-      "apply": {
-        "model": "da85:block/string_lights"
-      },
-      "when": {
-        "north": "true"
-      }
+  "variants": {
+    "facing=east": {
+      "model": "da85:block/string_lights",
+      "y": 90
     },
-    {
-      "apply": {
-        "model": "da85:block/string_lights"
-      },
-      "when": {
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "west": "false"
-      }
+    "facing=north": {
+      "model": "da85:block/string_lights"
     },
-    {
-      "apply": {
-        "model": "da85:block/string_lights",
-        "uvlock": true,
-        "y": 90
-      },
-      "when": {
-        "east": "true"
-      }
+    "facing=south": {
+      "model": "da85:block/string_lights",
+      "y": 180
     },
-    {
-      "apply": {
-        "model": "da85:block/string_lights",
-        "uvlock": true,
-        "y": 90
-      },
-      "when": {
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "west": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "da85:block/string_lights",
-        "uvlock": true,
-        "y": 180
-      },
-      "when": {
-        "south": "true"
-      }
-    },
-    {
-      "apply": {
-        "model": "da85:block/string_lights",
-        "uvlock": true,
-        "y": 180
-      },
-      "when": {
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "west": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "da85:block/string_lights",
-        "uvlock": true,
-        "y": 270
-      },
-      "when": {
-        "west": "true"
-      }
-    },
-    {
-      "apply": {
-        "model": "da85:block/string_lights",
-        "uvlock": true,
-        "y": 270
-      },
-      "when": {
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "west": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "da85:block/string_lights",
-        "uvlock": true,
-        "x": 270
-      },
-      "when": {
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "west": "false"
-      }
-    },
-    {
-      "apply": {
-        "model": "da85:block/string_lights",
-        "uvlock": true,
-        "x": 90
-      },
-      "when": {
-        "east": "false",
-        "north": "false",
-        "south": "false",
-        "west": "false"
-      }
+    "facing=west": {
+      "model": "da85:block/string_lights",
+      "y": 270
     }
-  ]
+  }
 }

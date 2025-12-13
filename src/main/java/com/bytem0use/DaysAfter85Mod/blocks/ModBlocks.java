@@ -56,7 +56,7 @@ public class ModBlocks {
         SPEAKER = registerBlock("speaker", () -> new SpeakerBlock(BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.METAL)));
         WINDOW = registerBlock("window", () -> new WindowBlock(BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.GLASS)));
         STAGE_BLOCK = registerBlock("stage_block", () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.BAMBOO_WOOD)));
-        STRING_LIGHTS = registerBlock("string_lights", () -> new StringLightsBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).noOcclusion().lightLevel(StringLightsBlock.emission(7))));
+        STRING_LIGHTS = registerBlock("string_lights", () -> new StringLightsBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOL).noOcclusion().lightLevel((state) -> {return 7;})));
     }
 
     public static void register(IEventBus eventBus) {

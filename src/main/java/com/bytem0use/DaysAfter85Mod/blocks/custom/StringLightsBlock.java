@@ -19,33 +19,41 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.ToIntFunction;
 
-public class StringLightsBlock extends MultifaceBlock {
+public class StringLightsBlock extends HorizontalDirectionalBlock {
     public static final MapCodec<StringLightsBlock> CODEC = simpleCodec(StringLightsBlock::new);
-    private final MultifaceSpreader spreader = new MultifaceSpreader(this);
 
     public StringLightsBlock(Properties properties) {
         super(properties);
     }
+    private static final VoxelShape SHAPE_N = Block.box(0, 8, 15, 16, 16, 16);
+    private static final VoxelShape SHAPE_E = Block.box(0, 8, 0, 1, 16, 16);
+    private static final VoxelShape SHAPE_S = Block.box(0, 8, 0, 16, 16, 1);
+    private static final VoxelShape SHAPE_W = Block.box(15, 8, 0, 16, 16, 16);
 
     @Override
-    protected MapCodec<? extends MultifaceBlock> codec() {
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        return switch (pState.getValue(FACING)) {
+            case NORTH -> SHAPE_N;
+            case EAST -> SHAPE_E;
+            case SOUTH -> SHAPE_S;
+            case WEST -> SHAPE_W;
+            default -> SHAPE_S;
+        };
+    }
+
+    @Override
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
         return CODEC;
     }
 
     @Override
-    protected BlockState updateShape(
-            BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos
-    ) {
-        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+    public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     @Override
-    public MultifaceSpreader getSpreader() {
-        return spreader;
-    }
-
-    public static ToIntFunction<BlockState> emission(int light) {
-        return state -> MultifaceBlock.hasAnyFace(state) ? light : 0;
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FACING);
     }
 
     @Override

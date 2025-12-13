@@ -3,14 +3,15 @@
   "render_type": "cutout",
   "textures": {
     "particle": "da85:block/string_lights",
-    "string_lights": "da85:block/string_lights"
+    "texture": "da85:block/string_lights"
   },
   "elements": [
-    {   "from": [ 0, 0, 0.1 ],
-      "to": [ 16, 16, 0.1 ],
+    {   "from": [ 0, 0, 15.8 ],
+      "to": [ 16, 16, 15.8 ],
+      "shade": false,
       "faces": {
-        "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#string_lights" },
-        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#string_lights" }
+        "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#texture" },
+        "south": { "uv": [ 16, 0, 0, 16 ], "texture": "#texture" }
       }
     }
   ]
