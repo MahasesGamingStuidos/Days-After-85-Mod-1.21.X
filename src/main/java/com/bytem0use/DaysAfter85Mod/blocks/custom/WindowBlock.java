@@ -17,18 +17,25 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class PresentBlock extends HorizontalDirectionalBlock {
-    public static final MapCodec<PresentBlock> CODEC = simpleCodec(PresentBlock::new);
+public class WindowBlock extends HorizontalDirectionalBlock {
+    public static final MapCodec<WindowBlock> CODEC = simpleCodec(WindowBlock::new);
 
-    public PresentBlock(Properties properties) {
+    public WindowBlock(Properties properties) {
         super(properties);
     }
-    private static final VoxelShape DEFAULT = Block.box(5, 0, 5, 11, 5, 11);
+    private static final VoxelShape SHAPE_N = Block.box(0, 0, 4, 16, 16, 9);
+    private static final VoxelShape SHAPE_E = Block.box(7, 0, 0, 12, 16, 16);
+    private static final VoxelShape SHAPE_S = Block.box(0, 0, 7, 16, 16, 12);
+    private static final VoxelShape SHAPE_W = Block.box(4, 0, 0, 9, 16, 16);
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return switch (pState.getValue(FACING)) {
-            default -> DEFAULT;
+            case NORTH -> SHAPE_N;
+            case EAST -> SHAPE_E;
+            case SOUTH -> SHAPE_S;
+            case WEST -> SHAPE_W;
+            default -> SHAPE_S;
         };
     }
 

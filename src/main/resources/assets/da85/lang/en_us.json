@@ -7,5 +7,9 @@
   "block.da85.present_purple": "Present (Purple)",
   "block.da85.present_orange": "Present (Orange)",
   "block.da85.present_yellow": "Present (Yellow)",
-  "block.da85.present_stack": "Present Stack"
+  "block.da85.present_stack": "Present Stack",
+  "block.da85.speaker": "Speaker",
+  "block.da85.window": "Window (Modular, or so not yet)",
+  "block.da85.stage_block": "Stage",
+  "block.da85.bunting_lights_1": "Bunting Lights"
 }
