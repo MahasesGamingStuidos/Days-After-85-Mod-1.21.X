@@ -2,33 +2,42 @@ package com.bytem0use.DaysAfter85Mod.blocks.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class PresentBlock extends HorizontalDirectionalBlock {
-    public static final MapCodec<PresentBlock> CODEC = simpleCodec(PresentBlock::new);
+import java.util.function.ToIntFunction;
 
-    public PresentBlock(Properties properties) {
+public class StringLightsBlock extends HorizontalDirectionalBlock {
+    public static final MapCodec<StringLightsBlock> CODEC = simpleCodec(StringLightsBlock::new);
+
+    public StringLightsBlock(Properties properties) {
         super(properties);
     }
-    private static final VoxelShape DEFAULT = Block.box(5, 0, 5, 11, 5, 11);
+    private static final VoxelShape SHAPE_N = Block.box(0, 8, 15, 16, 16, 16);
+    private static final VoxelShape SHAPE_E = Block.box(0, 8, 0, 1, 16, 16);
+    private static final VoxelShape SHAPE_S = Block.box(0, 8, 0, 16, 16, 1);
+    private static final VoxelShape SHAPE_W = Block.box(15, 8, 0, 16, 16, 16);
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return switch (pState.getValue(FACING)) {
-            default -> DEFAULT;
+            case NORTH -> SHAPE_N;
+            case EAST -> SHAPE_E;
+            case SOUTH -> SHAPE_S;
+            case WEST -> SHAPE_W;
+            default -> SHAPE_S;
         };
     }
 

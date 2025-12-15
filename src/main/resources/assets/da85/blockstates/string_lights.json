@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "da85:block/string_lights",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "da85:block/string_lights"
+    },
+    "facing=south": {
+      "model": "da85:block/string_lights",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "da85:block/string_lights",
+      "y": 270
+    }
+  }
+}

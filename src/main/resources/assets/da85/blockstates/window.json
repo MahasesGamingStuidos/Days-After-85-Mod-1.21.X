@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "da85:block/window"
+    },
+    "facing=south": {
+      "model": "da85:block/window",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "da85:block/window",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "da85:block/window",
+      "y": 270
+    }
+  }
+}

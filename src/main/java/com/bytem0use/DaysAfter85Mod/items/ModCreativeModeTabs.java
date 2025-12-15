@@ -27,7 +27,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PRESENT_PURPLE);
                         output.accept(ModBlocks.PRESENT_YELLOW);
                         output.accept(ModBlocks.PRESENT_STACK);
-                        output.accept(ModBlocks.SANDY_BRICKS);
 
                     }).build());
 

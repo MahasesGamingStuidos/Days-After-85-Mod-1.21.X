@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "da85:block/stage_top",
+    "side": "da85:block/stage_side",
+    "top": "da85:block/stage_top"
+  }
+}
