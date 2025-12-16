@@ -10,6 +10,9 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.level.block.Blocks;
+import com.bytem0use.DaysAfter85Mod.blocks.custom.LockerBlock;
 
 import java.util.function.Supplier;
 
@@ -23,6 +26,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PRESENT_PURPLE;
     public static final DeferredBlock<Block> PRESENT_YELLOW;
     public static final DeferredBlock<Block> PRESENT_STACK;
+    public static final DeferredBlock<Block> LOCKER;
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
@@ -43,9 +47,12 @@ public class ModBlocks {
         PRESENT_PURPLE = registerBlock("present_purple", () -> new PresentBlock(BlockBehaviour.Properties.of().noOcclusion()));
         PRESENT_YELLOW = registerBlock("present_yellow", () -> new PresentBlock(BlockBehaviour.Properties.of().noOcclusion()));
         PRESENT_STACK = registerBlock("present_stack", () -> new PresentBlock(BlockBehaviour.Properties.of().noOcclusion()));
+        LOCKER = registerBlock("locker", () -> new LockerBlock(BlockBehaviour.Properties.of().noOcclusion()));
     }
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
+        // Register block entities as well
+        ModBlockEntities.BLOCK_ENTITIES.register(eventBus);
     }
 }
